@@ -25,4 +25,8 @@ Al armar un nuevo proyecto si no reconoce los includes (.h) es posible que el pr
 
 ## PWM (Pulse Width Modulation)
 
-
+## Firebase
+<br>
+Este ejercicio no fue realizado con ESP-IDF sino con código .ino para enviar lectura de un potenciometro a base de datos Firebase.
+<img src="images/ejercicio_potenciometro_firebase.jpg" alt="new_project3" width="70%">
+<br>
