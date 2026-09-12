@@ -10,9 +10,9 @@
 #include <Firebase_ESP_Client.h>
 
 // Insertar credenciales de red
-#define WIFI_SSID "Miliyfran"
+#define WIFI_SSID "WiFi_SSID"
 
-#define WIFI_PASSWORD "Silver2708"
+#define WIFI_PASSWORD "Password"
 
 // Proporcionar la informacion del proceso de generacion del token.
 #include "addons/TokenHelper.h"
