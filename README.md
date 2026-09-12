@@ -9,7 +9,7 @@ Proyectos realizados en ESP-IDF con VSCode.
 En VSCode utilizando Ctrl+Shift+P o colocando ">" en linea de comandos superior iniciar un proyecto nuevo con
 ENew Proyect
 
-<img src="images/esp-idf_new_project1.jpg" alt="new_project1" width="70%">
+<img src="images/esp-idf_new_project1.jpg" alt="new_project1" width="100%">
 
 <br>
 Indicar la version de ESP-IDF a utilizar:<br>
