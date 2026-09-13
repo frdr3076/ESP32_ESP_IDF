@@ -7,7 +7,7 @@ Proyectos realizados en ESP-IDF con VSCode.
 
 ## Configuracion de proyectos
 En VSCode utilizando Ctrl+Shift+P o colocando ">" en linea de comandos superior iniciar un proyecto nuevo con
-ENew Proyect
+ESP-IDF:New Proyect
 
 <img src="images/esp-idf_new_project1.jpg" alt="new_project1" width="100%">
 
@@ -24,6 +24,17 @@ Al armar un nuevo proyecto si no reconoce los includes (.h) es posible que el pr
 <br>
 
 ## PWM (Pulse Width Modulation)
+
+Es necesario utilizar `#include "driver/ledc.h"` para incorporar las estructuras que hacen funcionar el PWM.<br>
+Se utiliza `vTimerCallback` para hacer una acción luego de que finalice el timer.<br>
+Funcion `set_pwm` modifica parametros de estructura `ledc_channel_config_t` para configurar el canal y las del timer por medio de `ledc_timer_config_t`. <br>
+Función `set_pwm_duty` utiliza funciones de la libreria `ledc.h` para setear el duty cycle con `ledc_set_duty` y actualizarlo con `ledc_update_duty`.
+<br>
+
+
+
+<br>
+
 
 ## Firebase
 <br>
