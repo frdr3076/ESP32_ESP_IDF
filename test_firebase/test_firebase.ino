@@ -24,7 +24,7 @@
 #define LED 2
 
 // Insertar la API Key del proyecto Firebase
-#define API_KEY "AIzaSyAbp-KpM_X3rNmaCxLLiWiSZkhZro2hE3k"
+#define API_KEY "API_KEY_here"
 
 // Insertar la URL de la base de datos RTDB
 #define DATABASE_URL "https://esp32-proyecto-basico-default-rtdb.firebaseio.com/"
