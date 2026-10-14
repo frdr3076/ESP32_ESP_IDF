@@ -5,10 +5,13 @@ Algunos ejemplos están realizados en Firebase con archivos .ino <br>
 
 ## Indice
 [1.Pinout ESP32](#pinout-esp32)
+
 [2.Configuracion de proyectos](#configuracion-de-proyectos)
+
 [3.PWM](#pwm)
-[4.Firebase](#firebase)
-[5.Potenciometro](#potenciometro)
+
+[4.Firebase](#firebase) <br>
+[5.Potenciometro](#potenciometro) <br>
 
 ## Pinout ESP32
 <img src="images/esp32-doit-devkit-v1.svg" alt="ESP32_Pinout" width="70%">
