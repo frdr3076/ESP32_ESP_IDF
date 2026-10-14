@@ -4,12 +4,9 @@ Proyectos realizados en ESP32 en ESP-IDF con VSCode.<br>
 Algunos ejemplos están realizados en Firebase con archivos .ino <br>
 
 ## Indice
-[1.Pinout ESP32](#pinout-esp32)
-
-[2.Configuracion de proyectos](#configuracion-de-proyectos)
-
-[3.PWM](#pwm)
-
+[1.Pinout ESP32](#pinout-esp32)<br>
+[2.Configuracion de proyectos](#configuracion-de-proyectos)<br>
+[3.PWM](#pwm)<br>
 [4.Firebase](#firebase) <br>
 [5.Potenciometro](#potenciometro) <br>
 
