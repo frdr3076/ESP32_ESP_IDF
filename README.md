@@ -15,7 +15,7 @@ Algunos ejemplos están realizados en Firebase con archivos .ino <br>
 
 ## Configuracion de proyectos
 En VSCode utilizando Ctrl+Shift+P o colocando ">" en linea de comandos superior iniciar un proyecto nuevo con
-ESP-IDF:New Proyect
+`>ESP-IDF:New Proyect`
 
 <img src="images/esp-idf_new_project1.jpg" alt="new_project1" width="100%">
 
@@ -34,6 +34,11 @@ En el CMake colocar lo siguiente:<br>
 `idf_component_register(SRCS "<proyecto>.c"
                     INCLUDE_DIRS "."
                     REQUIRES esp_driver_ledc esp_driver_gpio)`
+<br>
+
+`>ESP-IDF: Set Espressif Device Target`: Para configurar el target del proyecto
+`>ESP-IDF: Full Clean Project`: Para limpiar configuraciones.
+
 <br>
 
 ## PWM (Pulse Width Modulation)
