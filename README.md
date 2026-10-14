@@ -3,6 +3,13 @@
 Proyectos realizados en ESP32 en ESP-IDF con VSCode.<br>
 Algunos ejemplos están realizados en Firebase con archivos .ino <br>
 
+## Indice
+[1.Pinout ESP32](#pinout-esp32)
+[2.Configuracion de proyectos](#configuracion-de-proyectos)
+[3.PWM](#pwm)
+[4.Firebase](#firebase)
+[5.Potenciometro](#potenciometro)
+
 ## Pinout ESP32
 <img src="images/esp32-doit-devkit-v1.svg" alt="ESP32_Pinout" width="70%">
 
@@ -38,12 +45,14 @@ Función `set_pwm_duty` utiliza funciones de la libreria `ledc.h` para setear el
 <br>
 
 
-
-<br>
-
-
 ## Firebase
 <br>
 Este ejercicio no fue realizado con ESP-IDF sino con código .ino para enviar lectura de un potenciometro a base de datos Firebase.
 <img src="images/ejercicio_potenciometro_firebase.jpg" alt="new_project3" width="70%">
+<br>
+
+
+## Potenciometro
+Este ejercicio utiliza ESP-IDF para imprimir los valores de ADC por terminal.
+<img src="images/potenciometro_esp_idf.jpg" alt="potentiometer" width="70%">
 <br>
