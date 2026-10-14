@@ -47,12 +47,12 @@ Función `set_pwm_duty` utiliza funciones de la libreria `ledc.h` para setear el
 
 ## Firebase
 <br>
-Este ejercicio no fue realizado con ESP-IDF sino con código .ino para enviar lectura de un potenciometro a base de datos Firebase.
-<img src="images/ejercicio_potenciometro_firebase.jpg" alt="new_project3" width="70%">
+Este ejercicio no fue realizado con ESP-IDF sino con código .ino para enviar lectura de un potenciometro a base de datos Firebase a modo de prueba.
+<img src="images/ejercicio_potenciometro_firebase.jpg" alt="new_project3" width="90%">
 <br>
 
 
 ## Potenciometro
 Este ejercicio utiliza ESP-IDF para imprimir los valores de ADC por terminal.
-<img src="images/potenciometro_esp_idf.jpg" alt="potentiometer" width="70%">
+<img src="images/potenciometro_esp_idf.jpg" alt="potentiometer" width="80%">
 <br>
