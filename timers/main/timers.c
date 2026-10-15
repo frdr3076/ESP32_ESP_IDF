@@ -1,61 +1,58 @@
-/* Timers Example*/
-
-#include <stdio.h>
-#include "freertos/FreeRTOS.h"
-#include "freertos/task.h"
-#include "driver/gpio.h"
-#include "esp_log.h"
-#include "led_strip.h"
-#include "sdkconfig.h"
-#include "freertos/timers.h"
+/* 
+  Title: Timer Example
+  Description: Ejercicio simple de uso de timer.
+               Enciende y apaga led cada 100 ms
+*/
 
 
-#define led1 2
+#include "freertos/FreeRTOS.h" // Uso timer y macros
+#include "driver/gpio.h"       // Pines digitales
+#include "esp_log.h"           // Mensaje esp_log
+#include "freertos/timers.h"   // Timers
 
-uint8_t led_level = 0;
+#define led1 2                 // GPIO2
+
+uint8_t led_level = 0;         // Estado actual led
 static const char* TAG= "Main"; // TAG creado para usar esplog.
 //docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/log.html
 
 uint8_t count = 0;
-int interval = 100;
-int timerId = 1;
-TimerHandle_t xTimers;
+int interval = 100;        // periodo en ms
+int timerId = 1;           // ID del timer
+TimerHandle_t xTimers;     // Handler
 
+// Prototipos anunciados para el compilador
 esp_err_t init_led(void);
 esp_err_t blink_led(void);
 esp_err_t set_timer(void); // funcion de seteo timer
 
 void vTimerCallback( TimerHandle_t pxTimer ){
-    // Executes when timer finishes.
+    /* FreeRTOS ejecuta esta funcion cada 50 ms desde
+       tarea interna de timers
+    */
     ESP_LOGI(TAG, "Event was called from timer");
     blink_led();
-
-
 }
 
-
 void app_main(void)
-{
-
+{   // Llama los inicializadores y termina
     init_led();
     set_timer();
-
-
 
 } // end app_main
 
 
 esp_err_t init_led(void){
 
-    gpio_reset_pin(led1);
-    gpio_set_direction(led1, GPIO_MODE_OUTPUT);
-    return ESP_OK;
+    gpio_reset_pin(led1);                       // deja en estado por defecto
+    gpio_set_direction(led1, GPIO_MODE_OUTPUT); // configura como salida
+    return ESP_OK;                              // Devuelve codigo OK
 }
 
 esp_err_t blink_led(void){
 
-    led_level = !led_level;
-    gpio_set_level(led1, led_level);
+    led_level = !led_level;                    // Invierte estado
+    gpio_set_level(led1, led_level);           // Escrite el estado en PIN
     return ESP_OK;
 
 }
