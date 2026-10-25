@@ -62,10 +62,10 @@ Este ejercicio utiliza ESP-IDF para imprimir los valores de ADC por terminal.
 
 Conecctar extremos de potenciometro con los siguientes pines:
 <br>
-Pot                 ESP32
-Ext 1          ->   3.3V
-Ext 2 (Cursor) ->   GPIO34 (ADC1, CH6)
-Ext 3          ->   GND
+Pot                 ESP32              <br>
+Ext 1          ->   3.3V               <br>
+Ext 2 (Cursor) ->   GPIO34 (ADC1, CH6) <br>
+Ext 3          ->   GND                <br>
 
 <br>
 
