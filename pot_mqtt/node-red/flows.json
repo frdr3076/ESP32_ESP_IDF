@@ -1,0 +1,549 @@
+[
+    {
+        "id": "af72d79be0ff1b4d",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "4ce7a055e9756196",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c8b96d14de4ba4d1",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "0d28931aea066ca8",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#fcfcfd",
+            "primary": "#0d74ce",
+            "bgPage": "#f9f9fb",
+            "groupBg": "#ffffff",
+            "groupOutline": "#d9d9e0"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "4b5c1834e6280430",
+        "type": "ui-page",
+        "name": "App potenciometro",
+        "ui": "c8b96d14de4ba4d1",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "0d28931aea066ca8",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "tabs": [],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "8afab5a8e31653da",
+        "type": "ui-group",
+        "name": "Lectura ADC",
+        "page": "4b5c1834e6280430",
+        "width": 6,
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "04685febf21f0689",
+        "type": "sqlitedb",
+        "db": "C:\\Users\\User\\Desktop\\Estudios_independientes_en_Electronica\\ESP32\\ESP32-workspace\\pot_mqtt\\db_data\\lecturas.db",
+        "mode": "RWC"
+    },
+    {
+        "id": "f0aec91d29cbd1e4",
+        "type": "ui-group",
+        "name": "Lecturas Guardadas en Tabla",
+        "page": "4b5c1834e6280430",
+        "width": 6,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default",
+        "tab": ""
+    },
+    {
+        "id": "090fb83ea761480e",
+        "type": "mqtt in",
+        "z": "af72d79be0ff1b4d",
+        "name": "",
+        "topic": "esp32/pot",
+        "qos": "2",
+        "datatype": "json",
+        "broker": "4ce7a055e9756196",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [
+                "f7d506a6df752b36"
+            ]
+        ]
+    },
+    {
+        "id": "95fdd52cc0a9f485",
+        "type": "debug",
+        "z": "af72d79be0ff1b4d",
+        "name": "debug pot gauge",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1210,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "f7d506a6df752b36",
+        "type": "change",
+        "z": "af72d79be0ff1b4d",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "ultimo",
+                "pt": "flow",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.mv",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 780,
+        "y": 260,
+        "wires": [
+            [
+                "40bfc9208ddf27b5"
+            ]
+        ]
+    },
+    {
+        "id": "40bfc9208ddf27b5",
+        "type": "ui-gauge",
+        "z": "af72d79be0ff1b4d",
+        "name": "",
+        "group": "8afab5a8e31653da",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "needle",
+        "title": "Potenciometer",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "mV",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "1100",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "2200",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": 0,
+        "max": "3300",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 1000,
+        "y": 260,
+        "wires": [
+            [
+                "95fdd52cc0a9f485"
+            ]
+        ]
+    },
+    {
+        "id": "d886e60125d5723f",
+        "type": "sqlite",
+        "z": "af72d79be0ff1b4d",
+        "mydb": "04685febf21f0689",
+        "sqlquery": "fixed",
+        "sql": "CREATE TABLE IF NOT EXISTS lecturas(\n\n    id INTEGER PRIMARY KEY AUTOINCREMENT,\n    ts text,\n    raw INTEGER,\n    mv INTEGER\n);",
+        "name": "DB creation",
+        "x": 950,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f3a16949b7821c93",
+        "type": "inject",
+        "z": "af72d79be0ff1b4d",
+        "name": "inject DB",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 760,
+        "y": 360,
+        "wires": [
+            [
+                "d886e60125d5723f"
+            ]
+        ]
+    },
+    {
+        "id": "de571dbda1f40e2e",
+        "type": "ui-button",
+        "z": "af72d79be0ff1b4d",
+        "group": "8afab5a8e31653da",
+        "name": "",
+        "label": "Guardar",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 540,
+        "y": 480,
+        "wires": [
+            [
+                "64861e0653128d3f"
+            ]
+        ]
+    },
+    {
+        "id": "64861e0653128d3f",
+        "type": "function",
+        "z": "af72d79be0ff1b4d",
+        "name": "function 1",
+        "func": "const v = flow.get('ultimo');\nif (!v) {\n    node.warn('Todavía no llegó ninguna lectura');\n    return null;\n}\nmsg.params = {\n    $ts: new Date().toLocaleString('sv-SE'),  // \"2026-10-25 17:08:10\"\n    $raw: v.raw,\n    $mv: v.mv\n};\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 480,
+        "wires": [
+            [
+                "a38300986dab27b7"
+            ]
+        ]
+    },
+    {
+        "id": "a38300986dab27b7",
+        "type": "sqlite",
+        "z": "af72d79be0ff1b4d",
+        "mydb": "04685febf21f0689",
+        "sqlquery": "prepared",
+        "sql": "INSERT INTO lecturas (ts, raw, mv) VALUES ($ts, $raw, $mv);",
+        "name": "DB insertion",
+        "x": 870,
+        "y": 480,
+        "wires": [
+            [
+                "0863c29a55d3d1b5",
+                "97af0e305ec69722"
+            ]
+        ]
+    },
+    {
+        "id": "0863c29a55d3d1b5",
+        "type": "debug",
+        "z": "af72d79be0ff1b4d",
+        "name": "debug DB insertion",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "6723bf64ac40e5d1",
+        "type": "inject",
+        "z": "af72d79be0ff1b4d",
+        "name": "inject datos guardados",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "1",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 580,
+        "y": 580,
+        "wires": [
+            [
+                "97af0e305ec69722"
+            ]
+        ]
+    },
+    {
+        "id": "97af0e305ec69722",
+        "type": "sqlite",
+        "z": "af72d79be0ff1b4d",
+        "mydb": "04685febf21f0689",
+        "sqlquery": "fixed",
+        "sql": "SELECT * FROM lecturas\nORDER BY id DESC LIMIT 10",
+        "name": "Ver Lecturas",
+        "x": 830,
+        "y": 580,
+        "wires": [
+            [
+                "1c8acd6e14261683",
+                "8b784b0848619f03"
+            ]
+        ]
+    },
+    {
+        "id": "1c8acd6e14261683",
+        "type": "debug",
+        "z": "af72d79be0ff1b4d",
+        "name": "debug DB lecturas select",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "8b784b0848619f03",
+        "type": "ui-table",
+        "z": "af72d79be0ff1b4d",
+        "group": "f0aec91d29cbd1e4",
+        "name": "",
+        "label": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "maxrows": "10",
+        "passthru": false,
+        "autocols": false,
+        "showSearch": true,
+        "deselect": true,
+        "selectionType": "none",
+        "columns": [
+            {
+                "title": "#",
+                "key": "id",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Fecha y hora",
+                "key": "ts",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "Raw",
+                "key": "raw",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            },
+            {
+                "title": "mV",
+                "key": "mv",
+                "keyType": "key",
+                "type": "text",
+                "width": "",
+                "align": "start"
+            }
+        ],
+        "mobileBreakpoint": "sm",
+        "mobileBreakpointType": "defaults",
+        "action": "replace",
+        "className": "",
+        "x": 1050,
+        "y": 660,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1ec957e1654d56ed",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.34.0",
+            "node-red-node-sqlite": "2.0.1"
+        }
+    }
+]
