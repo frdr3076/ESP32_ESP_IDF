@@ -36,9 +36,10 @@ En el CMake colocar lo siguiente:<br>
                     REQUIRES esp_driver_ledc esp_driver_gpio)`
 <br>
 
-`>ESP-IDF: Set Espressif Device Target`: Para configurar el target del proyecto
-`>ESP-IDF: Full Clean Project`: Para limpiar configuraciones.
-
+### Resumen Config
+`>ESP-IDF: Set Espressif Device Target`: Para configurar el target del proyecto. <br>
+`>ESP-IDF: Full Clean Project`: Para limpiar configuraciones. <br>
+`ESP-IDF: Select Monitor Port to Use`: Para Setear el Port si lo cambiás. También puede ser necesario modificar .vscode > settings.json el parametro `idf.port` <br>
 <br>
 
 ## PWM (Pulse Width Modulation)
@@ -59,5 +60,24 @@ Este ejercicio no fue realizado con ESP-IDF sino con código .ino para enviar le
 
 ## Potenciometro
 Este ejercicio utiliza ESP-IDF para imprimir los valores de ADC por terminal.
+
+Conecctar extremos de potenciometro con los siguientes pines:
+<br>
+Pot                 ESP32              <br>
+Ext 1          ->   3.3V               <br>
+Ext 2 (Cursor) ->   GPIO34 (ADC1, CH6) <br>
+Ext 3          ->   GND                <br>
+
+<br>
+
 <img src="images/potenciometro_esp_idf.jpg" alt="potentiometer" width="80%">
 <br>
+
+## MQTT y Node-RED
+
+Con el proyecto y al tener instalado Mosquitto Broker ingresar en esta carpeta `cd "C:\Program Files\mosquitto"` y ejecutar el siguiente comando:
+`.\mosquitto_sub -h localhost -t "esp32/#" -v` <br>
+Luego de Build y Flash de tu proyecto, en VSCode ejecutar `ESP-IDF: Monitor Device` <br>
+Con esto verificás el funcionamiento de tu programa compilado. <br>
+
+En cmd ejecutar comando `node-red` para iniciarlo y poder ingresar al dashboard mediante `http://127.0.0.1:1880/dashboard`
