@@ -92,6 +92,6 @@ Para editar y configurar el sistema con node-red ingresar a `http://127.0.0.1:18
 
 El dashboard de tu flujo node-red puedes accederlo mediante `http://127.0.0.1:1880/dashboard`:
 <br><br>
-<img src="images/pot-mqtt_node-red_dashboard.jpg" alt="pot_mqtt dashboard node-red " width="100%">
+<img src="images/pot-mqtt_node-red_dashboard.svg" alt="pot_mqtt dashboard node-red " width="100%">
 
 
