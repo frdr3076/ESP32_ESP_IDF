@@ -36,9 +36,10 @@ En el CMake colocar lo siguiente:<br>
                     REQUIRES esp_driver_ledc esp_driver_gpio)`
 <br>
 
-`>ESP-IDF: Set Espressif Device Target`: Para configurar el target del proyecto
-`>ESP-IDF: Full Clean Project`: Para limpiar configuraciones.
-
+### Resumen Config
+`>ESP-IDF: Set Espressif Device Target`: Para configurar el target del proyecto. <br>
+`>ESP-IDF: Full Clean Project`: Para limpiar configuraciones. <br>
+`ESP-IDF: Select Monitor Port to Use`: Para Setear el Port si lo cambiás. También puede ser necesario modificar .vscode > settings.json el parametro `idf.port` <br>
 <br>
 
 ## PWM (Pulse Width Modulation)
