@@ -72,3 +72,12 @@ Ext 3          ->   GND                <br>
 
 <img src="images/potenciometro_esp_idf.jpg" alt="potentiometer" width="80%">
 <br>
+
+## MQTT y Node-RED
+
+Con el proyecto y al tener instalado Mosquitto Broker ingresar en esta carpeta `cd "C:\Program Files\mosquitto"` y ejecutar el siguiente comando:
+`.\mosquitto_sub -h localhost -t "esp32/#" -v` <br>
+Luego de Build y Flash de tu proyecto, en VSCode ejecutar `ESP-IDF: Monitor Device` <br>
+Con esto verificás el funcionamiento de tu programa compilado. <br>
+
+En cmd ejecutar comando `node-red` para iniciarlo y poder ingresar al dashboard mediante `http://127.0.0.1:1880/dashboard`
