@@ -80,4 +80,18 @@ Con el proyecto y al tener instalado Mosquitto Broker ingresar en esta carpeta `
 Luego de Build y Flash de tu proyecto, en VSCode ejecutar `ESP-IDF: Monitor Device` <br>
 Con esto verificás el funcionamiento de tu programa compilado. <br>
 
-En cmd ejecutar comando `node-red` para iniciarlo y poder ingresar al dashboard mediante `http://127.0.0.1:1880/dashboard`
+En cmd ejecutar comando `node-red`, se verá un mensaje como el siguiente.<br>
+Esta terminal debe mantenerse abier para configurar el sistema node-red: 
+<br><br>
+<img src="images/welcome_node-red.jpg" alt="welcome node-red" width="65%">
+
+<br><br>
+Para editar y configurar el sistema con node-red ingresar a `http://127.0.0.1:1880`, allí podrás crear y editar flujos de trabajo como el siguiente: <br><br>
+
+<img src="images/pot-mqtt_node-red_flow.jpg" alt="pot mqtt node-red flow" width="100%"> <br>
+
+El dashboard de tu flujo node-red puedes accederlo mediante `http://127.0.0.1:1880/dashboard`:
+<br><br>
+<img src="images/pot-mqtt_node-red_dashboard.jpg" alt="pot_mqtt dashboard node-red " width="100%">
+
+
